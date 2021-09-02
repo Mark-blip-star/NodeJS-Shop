@@ -1,0 +1,297 @@
+
+.nav-wrapper {
+   padding: 0 2rem;
+ }
+.navbar{
+   background-color: white;
+   width:100%
+}
+* {
+   box-sizing: border-box;
+}
+.border {
+   width: 300px;
+   margin: 0 auto;
+   background: rgba(90, 79, 79, 0.795);
+   padding: 20px;
+   border: 1px solid #000000;
+   display: inline-table;
+   margin-top: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+.wrap {
+   height: 100%;
+   position: relative;
+}
+.product-wrap {
+   position: relative;
+   
+}
+.product-wrap:after {
+   content: '';
+   background: rgba(100, 121, 163, 0.5);
+   position: absolute;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   top: 0;
+   opacity: 0;
+   transform: scale(.3);
+   transition: .3s ease-in-out;
+}
+.border:hover .product-wrap:after {
+   opacity: 1;
+   transform: scale(1);
+}
+.product-wrap a {
+   display: block;
+   text-decoration: none;
+}
+.product-wrap img {
+   display: block;
+   width: 100%;
+}
+.loop-action {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   opacity: 0;
+   transform: translate(-50%, -50%);
+   transition: .3s ease-in-out;
+}
+.border:hover .loop-action {
+   opacity: 1;
+}
+.loop-action a {
+   text-decoration: none;
+   display: block;
+   border: 1px solid white;
+   white-space: nowrap;
+   text-transform: uppercase;
+   padding: .5em 1em;
+   font-size: 14px;
+   line-height: 1.6;
+   outline: none;
+   position: relative;
+   overflow: hidden;
+   text-align: center;
+   color: white;
+   min-width: 160px;
+   margin: 5px auto;
+   transition: .3s ease-in-out;
+}
+.loop-action a:after {
+   content: '';
+   position: absolute;
+   left: -220%;
+   top: -500%;
+   width: 140%;
+   height: 1000%;
+   transform: rotate(45deg);
+   background: white;
+   z-index: -1;
+   transition: .3s ease-in-out;
+}
+.loop-action a:hover {
+   color: black;
+}
+.loop-action a:hover:after {
+   left: 0%;
+}
+.border:hover {
+   border-color: #4966A2;
+}
+.product-info {
+   padding-top: 15px;
+}
+.stars {
+   font-size: 14px;
+   font-family: FontAwesome;
+}
+.stars:before {
+   content: "\f005\f005\f005\f005\f123";
+   color: #F2453E;
+}
+.product-title {
+   font-weight: normal;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   color: #ffffff;
+   font-size: 18px;
+}
+.price {
+   font-family: "Open Sans";
+   color: #000000;
+   font-style: italic;
+   font-weight: bold;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.button-post{
+   display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  padding: 8px;
+  color: rgb(0, 0, 0);
+  border: 3px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: background-color 0.2s ease-out,
+              color 0.2s ease-out;
+}
+.button-post:hover,
+.button-post:active {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s ease-in,
+  color 0.3s ease-in;
+              
+}
+
+
+.quantity {
+   display: inline-block; }
+  
+  .quantity .input-text.qty {
+   width: 35px;
+   height: 39px;
+   padding: 0 5px;
+   text-align: center;
+   background-color: transparent;
+   border: 1px solid #efefef;
+  }
+  
+  .quantity.buttons_added {
+   text-align: left;
+   position: relative;
+   white-space: nowrap;
+   vertical-align: top; }
+  
+  .quantity.buttons_added input {
+   display: inline-block;
+   margin: 0;
+   vertical-align: top;
+   box-shadow: none;
+  }
+  
+  .quantity.buttons_added .minus,
+  .quantity.buttons_added .plus {
+   padding: 7px 10px 8px;
+   height: 41px;
+   background-color: #ffffff;
+   border: 1px solid #efefef;
+   cursor:pointer;}
+  
+  .quantity.buttons_added .minus {
+   border-right: 0; }
+  
+  .quantity.buttons_added .plus {
+   border-left: 0; }
+  
+  .quantity.buttons_added .minus:hover,
+  .quantity.buttons_added .plus:hover {
+   background: #eeeeee; }
+  
+  .quantity input::-webkit-outer-spin-button,
+  .quantity input::-webkit-inner-spin-button {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   margin: 0; }
+   
+   .quantity.buttons_added .minus:focus,
+  .quantity.buttons_added .plus:focus {
+   outline: none; }
+
+   shopnow, .sizeguide {
+      width: 170px;
+      margin-right: 30px;
+  }
+   
+  .size-btn, .shop-btn {
+      display: inline-block;
+      text-transform: uppercase;
+      border:1px solid #333333;
+      font: 16px/50px "OpenSansBold";
+      text-align: center;
+      height: 50px;
+      width: 170px;
+      margin-top: 30px;
+  }
+   
+  .size-btn {
+      width: 70px;  
+      margin-right: 21px;
+  }
+   
+  .size-btn:nth-child {
+      margin-right: 0px;
+  }
+   
+  input[value^=Shop] {
+      background-color: transparent;
+      color: #777777;
+  }
+   
+  .size-btn:hover, .shop-btn:hover {
+      background-color: #333333;
+      color: #fff;
+      cursor: pointer;
+  }
+  .orders{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    border-bottom-width: 100px;
+    border-right-width: 20px;
+  }
+  .auth{
+     padding-top: 1rem;
+  }
+  .alert{
+     padding: .5rem 1 rem;
+     border-radius: 10px;
+     text-align: center;
+     margin-bottom: 1rem;
+     background-color:rgba(255,0,0,.3);
+     color:red
+  }
+.body{
+   background-image: url(https://static-cse.canva.com/blob/194831/Green-Financial-Services-Corporate-Zoom-Background.3672a183.png);
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+.brand-logo{
+   background-repeat: no-repeat;
+   color: black;
+   background-color: black;
+   background-size:10rem;
+   border-radius: 10px;
+   border-width: 1px;
+   margin-left: 10px;
+   border-style:groove;
+}
+.text{
+   font-size: 4rem;
+}
+.fa-home{
+   color: black;
+}
+.fa-shopping-cart{ 
+   color: black;
+}
+.fa-store{
+   color: black;
+}
+.fa-door-open{
+   color: black;
+}
+.fa-address-card{
+   color: black;
+}
+.fa-folder-plus{
+   color: black;
+}
+.avatar{
+   max-width: 300px;
+   height: auto;
+}
+.fa-user{
+   color: black;
+}
