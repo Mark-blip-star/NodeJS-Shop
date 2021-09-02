@@ -1,0 +1,37 @@
+{{#if courses.length}}
+{{#each courses}}
+<div class="border">
+  <div class="wrap">
+    <div class="product-wrap">
+      <a href=""><img src="{{img}}"></a>
+    </div>
+      <div class="loop-action">
+      <a href="/courses/{{_id}}" class="add-to-cart">Быстрый просмотр</a>
+        <form action="/card/add" method="POST">
+          <input type="hidden" name="id" value="{{_id}}">
+          
+          <button class="button-post"type="submit" >В корзину</button>
+          <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+        </form>
+      </div>
+  </div>
+    <div class="product-info">
+      <h3 class="product-title">{{title}}</h3>
+      <div class="price"> {{price}} грн</div>
+      {{#if @root.isAuth}}
+      {{#ifeq @root.user.role "admin"}}
+       <form action="/courses/remove" method="POST">
+          <a href="/courses/{{_id}}/edit?allow=true" class="btn"><i class="fas fa-edit"></i></a>
+          <input type="hidden" name="id" value="{{_id}}">
+          <button class="btn red" type="submit" ><i class="fas fa-trash-alt"></i></button>
+          <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+        </form>
+        {{/ifeq}}
+      {{/if}}
+
+   </div>
+</div>
+  {{/each}}
+  {{else}}
+  
+  {{/if}}

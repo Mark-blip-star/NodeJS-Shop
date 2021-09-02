@@ -1,0 +1,41 @@
+<h1>Профиль</h1>
+<div class="row">
+    {{#if user.avatarUrl}}
+    <div class="col s6">
+        <img 
+        class="avatar"
+        src="/{{user.avatarUrl}}" 
+        alt="">
+    </div>
+{{else}}
+    <p>Аватара нет</p>
+{{/if}}
+    <div class="col s6">
+        <p>Ваш email: <strong>{{user.email}}</strong></p>
+
+        <form action="/profile" method="POST">
+            <div class="input-field">
+                <input id="name" name = "name" type="text" class="validate" value="{{user.name}}" >
+                <label for="name">Ваше имя</label>
+                <span class="helper-text" data-error="Имя не может быть пустым" data-success="" ></span>
+            </div>
+        </form>
+
+        <form action="/profile" method="POST" enctype="multipart/form-data">
+            <div class="file-field input-field">
+                <div class="btn">
+                    <span>Аватар</span>
+                    <input type="file" name="avatar">
+                </div>
+
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+        </div>
+        <input type="hidden" name="_csrf" value="{{csrf}}">
+        <input type="hidden" name="name" value="{{user.name}}">
+        <button type="submit" class="btn">Изменить</button>
+        </form>
+        
+    </div>
+</div>

@@ -1,0 +1,74 @@
+<nav>
+    <div class="nav-wrapper navbar">
+      <a href="/" class="brand-logo">Wristwatch</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        {{#if isAuth}}
+         {{#if isHome}}
+         <li class="active"><a href="/"><i class="fas fa-home"></i></a></li>
+
+          {{else}}
+              <li><a href="/"><i class="fas fa-home"></i></a></li>
+          {{/if}}
+
+          {{#if isCourses}}
+              <li class="active"><a href="/courses"><i class="fas fa-store"></i></a></li>
+          {{else}}
+              <li class=><a href="/courses"><i class="fas fa-store"></i></a></li>
+          {{/if}}
+
+          {{#if isProfile}}
+              <li class="active"><a href="/profile"><i class="far fa-user"></i></a></li>
+          {{else}}
+              <li class=><a href="/profile"><i class="far fa-user"></i></a></li>
+          {{/if}}
+
+
+          {{#if isCard}}
+              <li class="active"><a href="/card"><a href="/card"><i class="fas fa-shopping-cart"></i></a></li>
+          {{else}}
+              <li><a href="/card"><i class="fas fa-shopping-cart"></i></a></li>
+          {{/if}}
+          
+          {{#ifeq @root.user.role "admin"}}
+          {{#if isAdd}}
+              <li class="active"><a href="/addcourses"><a href="/addcourses"><i class="fas fa-folder-plus"></i></a></li>
+          {{else}}
+              <li><a href="/addcourses"><i class="fas fa-folder-plus"></i></a></li>
+          {{/if}}
+           {{/ifeq}}
+          
+
+            {{#if isLog}}
+              <li class="active"><a href="/auth/logout"><i class="fas fa-door-open"></i></a></li>
+          {{else}}
+              <li><a href="/auth/logout"><i class="fas fa-door-open"></i></a></li>
+          {{/if}}
+
+
+        {{else}}
+          {{#if isHome}}
+          <li class="active"><a href="/"><i class="fas fa-home"></i></a></li>
+          {{else}}
+              <li><a href="/"><i class="fas fa-home"></i></a></li>
+          {{/if}}
+
+          {{#if isCourses}}
+            <li class="active"><a href="/courses"><i class="fas fa-store"></i></a></li>
+          {{else}}
+              <li class=><a href="/courses"><i class="fas fa-store"></i></a></li>
+          {{/if}}
+
+           {{#if isLog}}
+            <li class="active"><a href="/auth/login#login"><i class="fas fa-address-card"></i></a></li>
+          {{else}}
+              <li><a href="/auth/login#login"><i class="fas fa-address-card"></i></a></li>
+          {{/if}}
+        {{/if}}
+
+
+
+        
+      </ul>
+    </div>
+  </nav>

@@ -1,0 +1,26 @@
+<h1>Редакт.товар "{{title}}"</h1>
+{{#if errors}}
+<p class="alert">{{errors}}</p>
+{{/if}}
+<form action="" method="POST">
+<div class="input-field">
+    <input id="title" name = "title" type="text" class="validate" required value="{{courses.title}}">
+    <label for="title">Название товара</label>
+    <span class="helper-text" data-error="Введите название" data-success=""></span>
+</div>
+
+<div class="input-field">
+    <input id="price" name="price" type="number" class="validate" required value="{{courses.price}}">
+    <label for="price">Цена</label>
+    <span class="helper-text" data-error="Введите цену" data-success="" min = "1"></span>
+</div>
+
+<div class="input-field">
+    <input id="img" name="img" type="text" class="validate" required value="{{courses.img}}">
+    <label for="img">URL</label>
+    <span class="helper-text" data-error="Введите URL" data-success=""></span>
+</div>
+<input type="hidden" name = "id" value="{{courses._id}}">
+<input type="hidden" name="_csrf" value="{{csrf}}">
+<button class="btn btn-primary">Редактировать</button>
+</form>

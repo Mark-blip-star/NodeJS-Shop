@@ -1,0 +1,51 @@
+<div id="card">
+{{#if courses.length}}
+<table>
+    <thead>
+        <th>Название</th>
+        <th>Колитчетсво</th>
+        <th>Действие</th>
+        <th>Цена</th>
+    </thead>
+
+<tbody>
+{{#each courses}}
+    <tr>
+        <td>{{title}}</td>
+        <td>
+            <div class="quantity buttons_added">
+	            <input type="button" value="-" class="minus" data-id="{{_id}}" data-csrf = "{{@root.csrf}}">
+                <input type="number" step="1" min="1" max="" name="quantity" value="{{count}}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+                <input type="button" value="+" class="plus" data-id="{{_id}}" data-csrf = "{{@root.csrf}}">
+            </div>
+            </td>
+        <td><form action="/card/deleteitem" method="POST">
+             <input type="hidden" name="id" value="{{_id}}">
+             <input type="hidden" name="_csrf" value="{{@root.csrf}}">
+            <button type="submit" id = "deletec" class = "btn red">Удалить</button>
+            </form>
+            </td>
+        <td>{{price}} грн/ед</td>
+    </tr>
+{{/each}}
+</tbody>
+</table>
+<p><strong>Цена:</strong><span class="price">{{total}} грн</span></p>
+<form action="/orders" method="POST">
+    <button type="submit" class="btn" >Оформить заказ</button>
+    <input type="hidden" name="_csrf" value="{{csrf}}">
+</form>
+{{else}}
+ <table>
+    <thead>
+        <th>Название</th>
+        <th>Колитчетсво</th>
+        <th>Действие</th>
+    </thead>
+<tbody>
+<h1>Корзина пуста</h1>
+</tbody>
+
+</table>
+{{/if}}
+</div>
