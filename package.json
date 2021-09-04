@@ -29,5 +29,13 @@
   "devDependencies": {
     "nodemon": "^2.0.7"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mark-blip-star/node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mark-blip-star/node/issues"
+  },
+  "homepage": "https://github.com/Mark-blip-star/node#readme",
   "description": ""
 }
