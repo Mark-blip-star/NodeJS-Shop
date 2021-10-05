@@ -8,7 +8,7 @@ module.exports = function(email){
         html:`<h1>Здравствуйте,вы успешно прошли регистрацию на нашем сайте(VIA)</h1>
         Ваш email: ${email}.
 
-        Ссылка для перехода в магазин - <a href = "/localhost:${PORT}">тык</a>
+        Ссылка для перехода в магазин - <a href = "/localhost:">тык</a>
         `
     }
 }
